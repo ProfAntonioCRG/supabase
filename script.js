@@ -37,11 +37,22 @@ const showMsg = (text, type = "success") => {
 const clearMsg = () => showMsg("");
 
 // ===== TROCA DE ABAS =====
+
+// Seleciona os botões e os painéis
+const tabs = document.querySelectorAll('.tab');
+const panes = document.querySelectorAll('.pane');
+
+// Alternância entre Login e Cadastro
 tabs.forEach(btn => {
   btn.addEventListener('click', () => {
+    // Remove active de todos os botões e panes
     tabs.forEach(b => b.classList.remove('active'));
     panes.forEach(p => p.classList.remove('active'));
+
+    // Adiciona active no botão clicado
     btn.classList.add('active');
+
+    // Ativa o painel correspondente
     document.getElementById(btn.dataset.tab).classList.add('active');
   });
 });
