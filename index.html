@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Importância do TCC em Desenvolvimento de Sistemas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Menu fixo -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">TCC em Sistemas</h1>
+      <ul class="nav-links">
+        <li><a href="#sobre">O que é TCC</a></li>
+        <li><a href="#importancia">Importância</a></li>
+        <li><a href="#etapas">Etapas</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#dicas">Dicas</a></li>
+        <li><a href="#futuro">Futuro</a></li>
+        <li><a href="#links">Links Úteis</a></li>
+        <li><a href="#login">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo -->
+  <main>
+    <section id="sobre">
+      <h2>O que é um TCC?</h2>
+      <p>O Trabalho de Conclusão de Curso (TCC) é um projeto acadêmico que consolida todo o aprendizado do curso. Em Desenvolvimento de Sistemas, ele representa uma oportunidade de aplicar teoria e prática em um projeto real.</p>
+    </section>
+
+    <section id="importancia">
+      <h2>A importância do TCC</h2>
+      <p>O TCC ajuda os alunos a desenvolverem pensamento crítico, habilidades de programação e capacidade de resolução de problemas, sendo um diferencial para o mercado de trabalho.</p>
+    </section>
+
+    <section id="etapas">
+      <h2>Etapas de um TCC</h2>
+      <ul>
+        <li>Escolha do tema</li>
+        <li>Pesquisa bibliográfica</li>
+        <li>Definição da tecnologia</li>
+        <li>Desenvolvimento e testes</li>
+        <li>Documentação e apresentação</li>
+      </ul>
+    </section>
+
+    <section id="habilidades">
+      <h2>Habilidades Desenvolvidas</h2>
+      <p>Durante o TCC, o estudante aprimora pesquisa científica, planejamento, programação, comunicação e trabalho em equipe.</p>
+    </section>
+
+    <section id="dicas">
+      <h2>Dicas para escolher o tema</h2>
+      <p>Escolha algo que resolva um problema real, esteja ligado às suas paixões e utilize tecnologias atuais como Inteligência Artificial, Ciência de Dados, Aplicativos móveis ou Segurança Digital.</p>
+    </section>
+
+    <section id="futuro">
+      <h2>Como o TCC ajuda no futuro</h2>
+      <p>O TCC pode se tornar um portfólio profissional, gerar startups e abrir portas no mercado de trabalho.</p>
+    </section>
+
+    <section id="links">
+      <h2>Links Úteis - Cursos da Alura</h2>
+      <ul>
+        <li><a href="https://www.alura.com.br/curso-online-logica-programacao" target="_blank">Lógica de Programação</a></li>
+        <li><a href="https://www.alura.com.br/curso-online-html-css" target="_blank">Desenvolvimento Web</a></li>
+        <li><a href="https://www.alura.com.br/curso-online-git-github" target="_blank">Git e GitHub</a></li>
+        <li><a href="https://www.alura.com.br/curso-online-scrum" target="_blank">Projetos Ágeis com Scrum</a></li>
+        <li><a href="https://www.alura.com.br/trilhas" target="_blank">Trilhas de Programação</a></li>
+      </ul>
+    </section>
+
+    <!-- Área de login/cadastro -->
+    <section id="login">
+      <h2>Área de Login e Cadastro</h2>
+      <p>Faça login para ter acesso a materiais exclusivos e dicas práticas para seu TCC.</p>
+      <div id="login-area">
+        <div class="container section">
+    <!-- Cabeçalho -->
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h2>Gerenciar Cadastros</h2>
+      <button id="logoutBtn" class="btn">Sair</button>
+    </div>
+
+    <!-- Tabela de usuários -->
+    <table id="usersTable" border="1" cellpadding="8" style="width:100%; border-collapse:collapse; margin-top:20px;">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Nascimento</th>
+          <th>Email</th>
+          <th>Telefone</th>
+          <th>Usuário</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <!-- Formulário de edição -->
+    <div id="editFormContainer" class="hidden" style="margin-top:30px;">
+      <h3>Editar Cadastro</h3>
+      <form id="editForm" class="form">
+        <input type="hidden" id="editId">
+        <div class="field"><label>Nome completo</label><input id="editNome" required /></div>
+        <div class="field"><label>Nascimento</label><input id="editNascimento" type="date" /></div>
+        <div class="field"><label>Email</label><input id="editEmail" type="email" required /></div>
+        <div class="field"><label>Telefone</label><input id="editTelefone" /></div>
+        <div class="field"><label>Usuário</label><input id="editUsuario" required /></div>
+        <button type="submit" class="btn">Salvar</button>
+        <button type="button" id="cancelEdit" class="btn ghost">Cancelar</button>
+      </form>
+    </div>
+
+    <div id="msg" class="msg"></div>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 - A importância do TCC em Desenvolvimento de Sistemas</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
