@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Login / Cadastro</title>
+  <link rel="stylesheet" href="login.css">
+  <script type="module" src="login.js"></script>
+</head>
+<body>
+  <div class="container auth">
+    <!-- Abas de navegação -->
+    <div class="tabs">
+      <button class="tab active" data-tab="login-pane">Login</button>
+      <button class="tab" data-tab="register-pane">Cadastro</button>
+    </div>
+
+    <!-- PANE DE LOGIN -->
+    <div id="login-pane" class="pane active">
+      <form id="loginForm" class="form">
+        <div class="field">
+          <label for="loginUser">Usuário ou E-mail</label>
+          <input id="loginUser" required>
+        </div>
+        <div class="field">
+          <label for="loginPass">Senha</label>
+          <input id="loginPass" type="password" required>
+        </div>
+        <button class="btn full" type="submit">Entrar</button>
+      </form>
+    </div>
+
+    <!-- PANE DE CADASTRO -->
+    <div id="register-pane" class="pane">
+      <form id="registerForm" class="form">
+        <div class="field">
+          <label for="regNome">Nome completo</label>
+          <input id="regNome" required>
+        </div>
+        <div class="field">
+          <label for="regNascimento">Data de nascimento</label>
+          <input id="regNascimento" type="date">
+        </div>
+        <div class="field">
+          <label for="regEmail">E-mail</label>
+          <input id="regEmail" type="email" required>
+        </div>
+        <div class="field">
+          <label for="regTelefone">Telefone</label>
+          <input id="regTelefone">
+        </div>
+        <div class="field">
+          <label for="regUsuario">Usuário</label>
+          <input id="regUsuario" required>
+        </div>
+        <div class="field">
+          <label for="regSenha">Senha</label>
+          <input id="regSenha" type="password" required>
+        </div>
+        <button class="btn full" type="submit">Cadastrar</button>
+      </form>
+    </div>
+
+    <!-- Mensagens de erro ou sucesso -->
+    <div id="authMsg" class="msg"></div>
+  </div>
+
+  <!-- Área privada (aparece só quando logado) -->
+  <div id="privateArea" class="hidden center private">
+    <p id="welcomeUser"></p>
+    <button id="logoutBtn" class="btn">Sair</button>
+  </div>
+</body>
+</html>
