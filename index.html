@@ -6,7 +6,8 @@
   <title>A Importância do TCC em Desenvolvimento de Sistemas</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script type="module" src="script.js"></script>
+  <link rel="stylesheet" href="login.css">
+  <script type="module" src="login.js"></script>
 </head>
 <body>
   <!-- Menu fixo -->
@@ -76,7 +77,8 @@
     </section>
 
     <!-- Área de login/cadastro -->
-    <div class="container auth">
+     <div class="container auth">
+    <!-- Abas de navegação -->
     <div class="tabs">
       <button class="tab active" data-tab="login-pane">Login</button>
       <button class="tab" data-tab="register-pane">Cadastro</button>
@@ -95,15 +97,6 @@
         </div>
         <button class="btn full" type="submit">Entrar</button>
       </form>
-
-      <div class="divider">ou</div>
-
-      <!-- BOTÃO LOGIN COM GOOGLE -->
-      <button id="googleLoginBtn" class="btn full google-btn">
-        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" 
-             alt="Google logo" width="20" style="vertical-align:middle; margin-right:8px;">
-        Entrar com Google
-      </button>
     </div>
 
     <!-- PANE DE CADASTRO -->
@@ -137,33 +130,15 @@
       </form>
     </div>
 
+    <!-- Mensagens de erro ou sucesso -->
     <div id="authMsg" class="msg"></div>
   </div>
 
+  <!-- Área privada (aparece só quando logado) -->
   <div id="privateArea" class="hidden center private">
     <p id="welcomeUser"></p>
     <button id="logoutBtn" class="btn">Sair</button>
   </div>
-
-  <style>
-    .divider {
-      text-align: center;
-      margin: 15px 0;
-      color: #666;
-    }
-    .google-btn {
-      background: #fff;
-      border: 1px solid #ccc;
-      color: #444;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: bold;
-    }
-    .google-btn:hover {
-      background: #f7f7f7;
-    }
-  </style>
 
   <footer>
     <p>© 2025 - A importância do TCC em Desenvolvimento de Sistemas | Profº Antonio Carlos</p>
