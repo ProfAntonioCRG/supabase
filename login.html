@@ -4,12 +4,7 @@
   <meta charset="utf-8" />
   <title>Cadastro/Login - Supabase</title>
   <link rel="stylesheet" href="login.css">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script type="module" src="login.js"></script>
-
-  <!-- Importa o script do Google Identity Services -->
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
-
+  
 
 </head>
 <body>
@@ -78,28 +73,7 @@
     </div>
   </div>
 
-  <script>
-    function handleCredentialResponse(response) {
-      // Decodifica o token JWT do Google
-      const data = parseJwt(response.credential);
 
-      // Mostra informações do usuário
-      document.getElementById("user-info").style.display = "block";
-      document.getElementById("user-name").textContent = data.name;
-      document.getElementById("user-email").textContent = data.email;
-      document.getElementById("user-pic").src = data.picture;
-    }
-
-    // Função para decodificar JWT
-    function parseJwt(token) {
-      const base64Url = token.split('.')[1];
-      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-      const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-      }).join(''));
-      return JSON.parse(jsonPayload);
-    }
-  </script>
 
     <!-- PANE DE CADASTRO -->
     <div id="register-pane" class="pane">
@@ -159,6 +133,35 @@
       background: #f7f7f7;
     }
   </style>
+    <script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="login.js"></script>
+
+  <!-- Importa o script do Google Identity Services -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    
+    function handleCredentialResponse(response) {
+      // Decodifica o token JWT do Google
+      const data = parseJwt(response.credential);
+
+      // Mostra informações do usuário
+      document.getElementById("user-info").style.display = "block";
+      document.getElementById("user-name").textContent = data.name;
+      document.getElementById("user-email").textContent = data.email;
+      document.getElementById("user-pic").src = data.picture;
+    }
+
+    // Função para decodificar JWT
+    function parseJwt(token) {
+      const base64Url = token.split('.')[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+      }).join(''));
+      return JSON.parse(jsonPayload);
+    }
+  </script>
  <footer>
     <p>© 2025 - A importância do TCC em Desenvolvimento de Sistemas | Profº Antonio Carlos</p>
   </footer>
