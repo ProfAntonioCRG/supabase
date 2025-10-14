@@ -114,32 +114,14 @@
     <button id="logoutBtn" class="btn">Sair</button>
   </div>
 
-  <style>
-    .divider {
-      text-align: center;
-      margin: 15px 0;
-      color: #666;
-    }
-    .google-btn {
-      background: #fff;
-      border: 1px solid #ccc;
-      color: #444;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: bold;
-    }
-    .google-btn:hover {
-      background: #f7f7f7;
-    }
-  </style>
-    <script>
+  
+    
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script type="module" src="login.js"></script>
 
   <!-- Importa o script do Google Identity Services -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
-
+ <script>
     
     function handleCredentialResponse(response) {
       // Decodifica o token JWT do Google
