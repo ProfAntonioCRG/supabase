@@ -219,6 +219,10 @@ footer {
 }
 
 
+.container.auth {
+  margin-top: 120px; /* Ajuste conforme a altura do seu header */
+}
+
 
 .divider {
       text-align: center;
