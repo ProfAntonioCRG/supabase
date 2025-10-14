@@ -1,24 +1,17 @@
-// app.js
+
+
+
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
-// ===== CONFIG SUPABASE =====
+document.addEventListener("DOMContentLoaded", () => {
+  
+  
+  // ===== CONFIG SUPABASE =====
 const SUPABASE_URL = "https://cnncldeuhpmmkeqqoxjl.supabase.co";   // troque
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNubmNsZGV1aHBtbWtlcXFveGpsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY5NDkzMjYsImV4cCI6MjA3MjUyNTMyNn0._6ex1_Rq4LCj3LteC4uo66_a4aJpFK1oUP0ozzdvftw";             // troque
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-// Botão de login com Google
-document.getElementById("googleLoginBtn").addEventListener("click", async () => {
-  const { data, error } = await supabase.auth.signInWithOAuth({
-    provider: 'google'
-  })
-
-  if (error) {
-    console.error("Erro ao logar com Google:", error.message)
-    alert("Erro ao entrar com Google: " + error.message)
-  }
-})
-
- // ===== ELEMENTOS =====
+  // ===== ELEMENTOS =====
   const tabs = document.querySelectorAll('.tab');
   const panes = document.querySelectorAll('.pane');
   const loginForm = document.getElementById('loginForm');
@@ -58,7 +51,7 @@ document.getElementById("googleLoginBtn").addEventListener("click", async () => 
     clearMsg();
 
     const nome = document.getElementById('regNome').value.trim();
-    const dataNascimento = document.getElementById('regNascimento').value || null;
+    const dataNascimento = document.getElementById('regNascimento').value.trim();
     const email = document.getElementById('regEmail').value.trim().toLowerCase();
     const telefone = document.getElementById('regTelefone').value.trim();
     const usuario = document.getElementById('regUsuario').value.trim().toLowerCase();
@@ -121,3 +114,4 @@ document.getElementById("googleLoginBtn").addEventListener("click", async () => 
     await supabase.auth.signOut();
     showMsg("Você saiu da conta.", "success");
   });
+});

@@ -5,10 +5,8 @@
   <title>Cadastro/Login - Supabase</title>
   <link rel="stylesheet" href="login.css">
   
-
 </head>
 <body>
-   
   <div class="container auth">
     <div class="tabs">
       <button class="tab active" data-tab="login-pane">Login</button>
@@ -31,34 +29,13 @@
 
       <div class="divider">ou</div>
 
-      <!-- Botão de Login do Google -->
-    <div id="g_id_onload"
-         data-client_id="935523634222-beramdqufrm2hj6nss166suuqad0f847.apps.googleusercontent.com"
-         data-context="signin"
-         data-ux_mode="popup"
-         data-callback="handleCredentialResponse"
-         data-auto_prompt="false">
+      <!-- BOTÃO LOGIN COM GOOGLE -->
+      <button id="googleLoginBtn" class="btn full google-btn">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" 
+             alt="Google logo" width="20" style="vertical-align:middle; margin-right:8px;">
+        Entrar com Google
+      </button>
     </div>
-
-    <div class="g_id_signin"
-         data-type="standard"
-         data-shape="rectangular"
-         data-theme="outline"
-         data-text="signin_with"
-         data-size="large"
-         data-logo_alignment="left">
-    </div>
-
-    <!-- Informações do usuário -->
-    <div id="user-info">
-      <p><strong>Bem-vindo!</strong></p>
-      <img id="user-pic" src="" alt="Foto do usuário" width="80">
-      <p id="user-name"></p>
-      <p id="user-email"></p>
-    </div>
-  </div>
-
-
 
     <!-- PANE DE CADASTRO -->
     <div id="register-pane" class="pane">
@@ -99,40 +76,13 @@
     <button id="logoutBtn" class="btn">Sair</button>
   </div>
 
+   <script type="module" src="login.js">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
   
-    
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script type="module" src="login.js"></script>
 
-  <!-- Importa o script do Google Identity Services -->
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
- <script>
-    
-    function handleCredentialResponse(response) {
-      // Decodifica o token JWT do Google
-      const data = parseJwt(response.credential);
 
-      // Mostra informações do usuário
-      document.getElementById("user-info").style.display = "block";
-      document.getElementById("user-name").textContent = data.name;
-      document.getElementById("user-email").textContent = data.email;
-      document.getElementById("user-pic").src = data.picture;
-    }
+   </script>
 
-    // Função para decodificar JWT
-    function parseJwt(token) {
-      const base64Url = token.split('.')[1];
-      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-      const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-      }).join(''));
-      return JSON.parse(jsonPayload);
-    }
-  </script>
- <footer>
-    <p>© 2025 - A importância do TCC em Desenvolvimento de Sistemas | Profº Antonio Carlos</p>
-  </footer>
 
-  </body>
+</body>
 </html>
-
